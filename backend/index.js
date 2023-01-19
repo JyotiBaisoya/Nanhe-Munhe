@@ -2,12 +2,17 @@ const express = require("express");
 const connection = require("./config/db");
 const {userRouter}= require("./routes/userroute")
 const {adminRouter} = require("./routes/adminrout")
-const app = express()
+const {productRouter} = require("./routes/productroute")
+const cors = require("cors");
 
+
+const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.use("/user",userRouter)
 app.use("/admin",adminRouter)
+app.use("/product",productRouter)
 app.get("/",(req,res)=>{
     res.send("HOME PAGE")
 })

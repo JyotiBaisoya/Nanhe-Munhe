@@ -8,19 +8,31 @@ const adminRouter = express.Router()
 
 adminRouter.post("/register",async(req,res)=>{
     const {name,email,password} = req.body
-    try {
-      bcrypt.hash(password,5,async(err,hash)=>{
-          const user = new AdminModel({name,email,password:hash})
-          await user.save()
-          res.send("Registerd")
-          console.log("Registered")  
-
-      })
-     
-    } catch (error) {
-      res.send("something went wrong")
-      console.log(error)
+    const search = await AdminModel.find({email})
+    if(search.length>0){
+        res.send("you are already registered please login ")
+    }else{
+        if(req.query.code=="mycompany"){
+        
+            try {
+                bcrypt.hash(password,5,async(err,hash)=>{
+                    const user = new AdminModel({name,email,password:hash})
+                    await user.save()
+                    res.send("Registerd")
+                    console.log("Registered")  
+          
+                })
+               
+              } catch (error) {
+                res.send("something went wrong")
+                console.log(error)
+              }
+        }else{
+            res.send("you are not authorised")
+        }
     }
+    
+   
 })
 
 adminRouter.post("/login",async(req,res)=>{
