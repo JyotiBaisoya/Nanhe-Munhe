@@ -1,4 +1,4 @@
-    fetch("http://localhost:3500/product/all")
+    fetch("https://cute-puce-gaiters.cyclic.app/product/all")
     .then(res=>res.json())
     .then(res=>{
         renderProduct(res)
@@ -31,7 +31,7 @@
     }
 
     function dellete(id){
-        fetch(`http://localhost:3500/product/delete/${id}`,{
+        fetch(`https://cute-puce-gaiters.cyclic.app/product/delete/${id}`,{
             method:"PUT"
         })
         .then(res=>res.json())

@@ -17,7 +17,7 @@ submit_btn.addEventListener("click",(event)=>{
 })
 
  function loginUser(obj){
-    fetch("http://localhost:3500/user/login",{
+    fetch("https://cute-puce-gaiters.cyclic.app/user/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -28,6 +28,7 @@ submit_btn.addEventListener("click",(event)=>{
             if(res){
                 alert("loggin successful")
                 window.location.href="index.html"
+                
             }else{
                 alert("please register first")
             }
