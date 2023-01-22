@@ -15,7 +15,7 @@ submit_btn.addEventListener("click",(event)=>{
 async function registerUser(obj){
     try {
         console.log(obj)
-       let register_rqst=await fetch("http://localhost:3500/user/register",{
+       let register_rqst=await fetch("https://cute-puce-gaiters.cyclic.app/user/register",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

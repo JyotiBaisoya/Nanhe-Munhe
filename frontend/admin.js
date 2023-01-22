@@ -17,7 +17,7 @@ submit_btn.addEventListener("click",(event)=>{
 })
 
  function loginUser(obj){
-    fetch("http://localhost:3500/admin/login",{
+    fetch("https://cute-puce-gaiters.cyclic.app/admin/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

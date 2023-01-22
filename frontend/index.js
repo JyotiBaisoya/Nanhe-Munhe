@@ -34,3 +34,10 @@ function Index(){
 window.location.href="./login.html";
 
 }
+
+document.getElementById("cart").addEventListener("click",Index);
+
+function Index(){
+window.location.href="./cart.html";
+
+}
