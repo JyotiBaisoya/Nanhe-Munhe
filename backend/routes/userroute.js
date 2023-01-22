@@ -6,16 +6,15 @@ const userRouter = express.Router()
 
 userRouter.post("/register",async(req,res)=>{
     const {name,email,password} = req.body
-    const search = await UserModel.find({email})
-    if(search.length>0){
-        res.send("you are already registered please login")
-    }else{
+    
+    
         try {
             bcrypt.hash(password,5,async(err,hash)=>{
                 const user = new UserModel({name,email,password:hash})
                 await user.save()
-                res.send("Registerd")
-                console.log("Registered")  
+                res.send("Regiseterd")
+                console.log("Registered")
+                console.log(req.body)  
       
             })
            
@@ -24,7 +23,7 @@ userRouter.post("/register",async(req,res)=>{
             console.log(error)
           }
     
-    }
+    
        
     
     

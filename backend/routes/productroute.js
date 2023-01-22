@@ -24,7 +24,7 @@ productRouter.post("/add",async(req,res)=>{
     }
 })
 
-productRouter.patch("./update/:product_id",async(req,res)=>{
+productRouter.patch("/update/:product_id",async(req,res)=>{
     const product_id = req.params.product_id
     const payload = req.body
     try {
@@ -35,11 +35,11 @@ productRouter.patch("./update/:product_id",async(req,res)=>{
     }
 })
 
-productRouter.put("./delete/:product_id",async(req,res)=>{
+productRouter.put("/delete/:product_id",async(req,res)=>{
     const product_id = req.params.product_id
     
     try {
-      await ProductModel.findByIdAndDelete({_id:product_id},payload) 
+      await ProductModel.findByIdAndDelete({_id:product_id}) 
       res.send("deleted")
     } catch (error) {
         console.log(error)

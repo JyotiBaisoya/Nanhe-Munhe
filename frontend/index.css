@@ -133,3 +133,33 @@
  #cute-kids>div>img{
    width:100%
  }
+
+ #sponsers{
+  margin-left: 90px;
+  margin-right: 90px;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  gap:10px
+ }
+ #sponsers>div>img{
+  width:100%
+ }
+
+ #slideshow{
+  margin: 90px;
+  display: flex;
+  justify-content: center;
+ }
+ #footer{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(249, 247, 247);
+ }
+
+ #footer-left{
+  display: flex;
+ }
+ #footer-left>div{
+
+  margin:20px
+ }
