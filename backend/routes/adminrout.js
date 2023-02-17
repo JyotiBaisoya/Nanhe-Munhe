@@ -18,6 +18,7 @@ adminRouter.post("/register",async(req,res)=>{
                 bcrypt.hash(password,5,async(err,hash)=>{
                     const user = new AdminModel({name,email,password:hash})
                     await user.save()
+                    
                     res.send("Registerd")
                     console.log("Registered")  
           
