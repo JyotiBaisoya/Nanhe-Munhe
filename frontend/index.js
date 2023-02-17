@@ -28,9 +28,9 @@ var Images = [
   }, 3000);
 
  
-document.getElementById("login-register").addEventListener("click",Index);
+document.getElementById("login-register").addEventListener("click",mndex);
 
-function Index(){
+function mndex(){
 window.location.href="./login.html";
 
 }
